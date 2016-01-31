@@ -1,10 +1,22 @@
 package com.mastering.rmi.model;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
+
+	private static final long serialVersionUID = 4775266810812172367L;
 
 	private Long id;
 
 	private String title;
+	
+	private String code;
+
+	public Book(Long id, String code, String title) {
+		this.id = id;
+		this.code = code;
+		this.title = title;
+	}
 
 	public Long getId() {
 		return id;
@@ -20,6 +32,14 @@ public class Book {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 }

@@ -1,12 +1,22 @@
 package com.mastering.rmi.model;
 
-public class StockItem {
+import java.io.Serializable;
+
+public class StockItem implements Serializable {
+
+	private static final long serialVersionUID = 4536981990257978981L;
 
 	private Long id;
 
 	private Book book;
 
 	private int quantity;
+
+	public StockItem(Long id, Book book, int quantity) {
+		this.id = id;
+		this.book = book;
+		this.quantity = quantity;
+	}
 
 	public Long getId() {
 		return id;
