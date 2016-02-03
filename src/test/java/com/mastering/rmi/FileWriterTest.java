@@ -5,10 +5,12 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 import java.io.FileInputStream;
+import java.io.NotSerializableException;
 
 import org.junit.Test;
 
 import com.mastering.rmi.model.Book;
+import com.mastering.rmi.model.Person;
 import com.mastering.rmi.model.StockItem;
 import com.mastering.rmi.serialization.FileWriter;
 
@@ -27,5 +29,14 @@ public class FileWriterTest {
 		assertThat(stream.read(), is(equalTo(172)));
 		
 		stream.close();
+	}
+	
+	@Test(expected = NotSerializableException.class)
+	public void shouldFailWhileTryingToSerializeANonSerializableClass() throws Exception {
+		FileWriter writer = new FileWriter();
+		
+		Person person = new Person(1L, "Alexandre Gama");
+		
+		writer.write(person);
 	}
 }

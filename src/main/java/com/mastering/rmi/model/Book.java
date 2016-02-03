@@ -2,7 +2,7 @@ package com.mastering.rmi.model;
 
 import java.io.Serializable;
 
-public class Book implements Serializable {
+public class Book implements Serializable { //Needs to be Serializable to enable StockItem class to be Serialize
 
 	private static final long serialVersionUID = 4775266810812172367L;
 
