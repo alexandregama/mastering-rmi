@@ -18,10 +18,9 @@ public class FileWriterTest {
 
 	@Test
 	public void shouldWriteAFileWithStockItemObject() throws Exception {
-		FileWriter writer = new FileWriter();
-		
 		StockItem item = new StockItem(1L, new Book(1L, "12345", "RMI Book"), 5);
 		
+		FileWriter writer = new FileWriter();
 		writer.write(item);
 		
 		FileInputStream stream = new FileInputStream("stockItem.txt");
@@ -33,10 +32,10 @@ public class FileWriterTest {
 	
 	@Test(expected = NotSerializableException.class)
 	public void shouldFailWhileTryingToSerializeANonSerializableClass() throws Exception {
-		FileWriter writer = new FileWriter();
-		
 		Person person = new Person(1L, "Alexandre Gama");
 		
+		FileWriter writer = new FileWriter();
 		writer.write(person);
 	}
+	
 }
