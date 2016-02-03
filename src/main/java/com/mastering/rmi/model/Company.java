@@ -11,6 +11,8 @@ public class Company implements Serializable {
 	private String name;
 	
 	transient private String address;
+	
+	private static Long employeesQuantity;
 
 	public Company(Long id, String name, String address) {
 		this.id = id;
@@ -36,6 +38,14 @@ public class Company implements Serializable {
 
 	public String getAddress() {
 		return address;
+	}
+
+	public static Long getEmployeesQuantity() {
+		return employeesQuantity;
+	}
+
+	public static void setEmployeesQuantity(Long employeesQuantity) {
+		Company.employeesQuantity = employeesQuantity;
 	}
 	
 }
