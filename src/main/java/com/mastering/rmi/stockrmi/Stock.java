@@ -1,7 +1,10 @@
 package com.mastering.rmi.stockrmi;
 
-public interface Stock {
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 
-	int getQuantityFrom(String code);
+public interface Stock extends Remote {
+
+	int getQuantityFrom(String code) throws RemoteException;
 	
 }
