@@ -75,3 +75,14 @@ public class Book { //Not Serializable
   
   Serializable will call all its Superclasses and Externalizable will not
 
+##RMI Classes
+
+####java.rmi.Remote interface
+
+- A remote interface must at least extend, either directly or indirectly, the interface java.rmi.Remote
+
+- A remote method declaration must include the exception java.rmi.RemoteException  (or one of its superclasses such as java.io.IOException or java.lang.Exception) 
+
+- A remote object declared as a parameter or return value must be declared as the remote interface
+
+- A remote interface may also extend another non-remote interface, as long as all of the methods (if any) of the extended interface satisfy the requirements of a remote method declaration.
