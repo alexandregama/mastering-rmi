@@ -12,4 +12,5 @@ public class BankServiceRendpointRegister {
 		Naming.rebind("/bankservice", new BankService());
 		System.out.println("BankService Endpoint is Active!");
 	}
+	
 }
