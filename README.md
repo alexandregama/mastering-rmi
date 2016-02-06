@@ -22,6 +22,14 @@ public class StockItem implements Serializable {
   
   We can't serialize static fields  
 
+- **Transient variable**
+
+  **transient** keyword can be used along with **static** keyword but is not make any sense
+  
+  **transient** variables are initialized with its default value
+  
+  **transient** is not persisted or saved when an object gets serialized
+
 - **Which types are automatically Serializable?**
 
 ```
@@ -52,4 +60,18 @@ public class Book { //Not Serializable
 	
 }
 ```
+
+- **Differences between Serializable and Externalizable**
+
+  Serializable uses a default serialization by JVM
+  
+  Externalizable uses a custom serialization
+  
+  We can improve performance using Externalizable process
+  
+  Externalizable interface provides complete control of serialization
+  
+  We have **readExternal()** method and **writeExternal()** method to work in Externalizable
+  
+  Serializable will call all its Superclasses and Externalizable will not
 
