@@ -1,4 +1,4 @@
-package com.mastering.rmi;
+package com.mastering.rmi.stock;
 
 import static org.junit.Assert.*;
 
