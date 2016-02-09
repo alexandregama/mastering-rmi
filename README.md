@@ -74,6 +74,39 @@ public class Book { //Not Serializable
   We have **readExternal()** method and **writeExternal()** method to work in Externalizable
   
   Serializable will call all its Superclasses and Externalizable will not
+  
+ ##### Overview of Serializable class
+ 
+ **A Serializable class must do the following:**
+ 
+- Implement the java.io.Serializable interface
+ 
+- Identify the fields that should be serializable
+(Use the serialPersistentFields member to explicitly declare them serializable or use the transient keyword to denote nonserializable fields.)
+ 
+- Have access to the no-arg constructor of its first nonserializable superclass
+
+**The class can optionally define the following methods:**
+
+- A writeObject method to control what information is saved or to append additional information to the stream
+
+- A readObject method either to read the information written by the corresponding writeObject method or to update the state of the object after it has been restored
+
+- A writeReplace method to allow a class to nominate a replacement object to be written to the stream 
+
+##### The Externalizable Interface
+
+**The class of an Externalizable object must do the following:**
+
+- Implement the java.io.Externalizable interface
+
+- Implement a writeExternal method to save the state of the object
+
+- Implement a readExternal method to read the data written by the writeExternal method from the stream and restore the state of the object
+
+- Have the writeExternal and readExternal methods be solely responsible for the format, if an externally defined format is written
+
+- Have a public no-arg constructor
 
 ##RMI Classes
 
