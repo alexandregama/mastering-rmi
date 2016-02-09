@@ -108,6 +108,15 @@ public class Book { //Not Serializable
 
 - Have a public no-arg constructor
 
+##### Obs
+
+- The process by which enum constants are serialized cannot be customized
+
+- All enum types have a fixed serialVersionUID of 0L
+
+- Several techniques are available to protect sensitive data in classes 
+
+
 ##RMI Classes
 
 ####java.rmi.Remote interface
