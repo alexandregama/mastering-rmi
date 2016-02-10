@@ -128,3 +128,9 @@ public class Book { //Not Serializable
 - A remote object declared as a parameter or return value must be declared as the remote interface
 
 - A remote interface may also extend another non-remote interface, as long as all of the methods (if any) of the extended interface satisfy the requirements of a remote method declaration.
+
+####The RemoteObject Class and its Subclasses
+
+- The java.rmi.server.UnicastRemoteObject class defines a singleton (unicast) remote object whose references are valid only while the server process is alive.
+
+- The class java.rmi.activation.Activatable is an abstract class that defines an activatable remote object that starts executing when its remote methods are invoked and can shut itself down when necessary.
